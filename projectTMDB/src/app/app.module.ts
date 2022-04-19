@@ -19,7 +19,6 @@ import { APP_ROUTING } from './app.routes';
 
 // Pipes
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { GaleriaComponent } from './components/home/galeria.component';
 
 @NgModule({
@@ -38,8 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    APP_ROUTING,
-    NgbModule
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
