@@ -15,13 +15,10 @@ export class BuscarComponent implements OnInit {
   constructor(public ps: PeliculasService,
               private router: ActivatedRoute) {
 
-    // Revisamos el param que viene
-    // Para subscribirnos a cualquier cambio que tenga este parametro(s) por el url
     this.router.params.subscribe( params => {
       console.log(params);
       // Si viene el texto
       if (params['texto']) {
-        // Entonces disparamos el this.buscarPelicula()
         this.buscar = params['texto'];
         this.buscarPelicula();
       }
@@ -33,7 +30,6 @@ export class BuscarComponent implements OnInit {
 
   buscarPelicula() {
 
-    // Si no escribio nada, retornamos para que no dispare la funcion
     if (this.buscar.length === 0) {
       return;
     }
