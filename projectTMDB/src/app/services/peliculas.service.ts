@@ -12,7 +12,8 @@ export class PeliculasService {
   private urlMoviedb: string = 'https://api.themoviedb.org/3';
 
   peliculas:any[] = []; //aquí almacenaremos las peliculas segun la opción 
-
+  pelisfav: any[] = []
+  
   constructor(private jsonp: HttpClientJsonpModule,
               private http: HttpClient) { }
 
@@ -23,6 +24,7 @@ export class PeliculasService {
     .pipe(map( res => {
      this.peliculas = res ['results']
      console.log(this.peliculas);
+     console.log(this.peliculas[1].id)
      return res['results'];
     
   }));
@@ -43,5 +45,15 @@ export class PeliculasService {
     let url = `${this.urlMoviedb}/movie/${id}?api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
     return this.http.jsonp(url, 'JSONP_CALLBACK')
     .pipe(map( res => res));
+  }
+
+  addFavoritos(){
+    
+    this.pelisfav.push(this.peliculas.find(x=>x.id===x))
+
+  }
+
+  tellLenght(){
+    console.log (this.peliculas.length)
   }
 }

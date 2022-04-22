@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     .subscribe( data => this.populares = data );
 
   }
+  
 
   ngOnInit(): void {
   }

@@ -14,12 +14,10 @@ import { FormsModule } from '@angular/forms';
 // Para permitirnos hacer peticiones http y Jsonp
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
-// Importar rutas
-import { APP_ROUTING } from './app.routes';
 
 // Pipes
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
-// import { GaleriaComponent } from './components/home/galeria.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +27,14 @@ import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
     PeliculaComponent,
     BuscarComponent,
     PeliculaImagenPipe,
-    // GaleriaComponent
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule,
-    APP_ROUTING
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
